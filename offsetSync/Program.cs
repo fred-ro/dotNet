@@ -47,7 +47,7 @@ namespace offsetSync
             }
             // New consumer builder to commit offset for another Consumer Group
             var builder2 = new ConsumerBuilder<string, string>(newConfig);
-            using (var consumer = builder.Build())
+            using (var consumer = builder2.Build())
             {
                 var parts = new List<TopicPartitionOffset>();
                 parts.Add(new TopicPartitionOffset(new TopicPartition("test", 0), offset));
